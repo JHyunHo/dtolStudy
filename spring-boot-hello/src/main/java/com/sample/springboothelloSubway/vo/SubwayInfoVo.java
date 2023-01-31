@@ -1,4 +1,4 @@
-package com.sample.springboothelloSubstationInfo;
+package com.sample.springboothelloSubway.vo;
 
 import javax.persistence.*;
 
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Table(name = "Substationinfo")
 @NoArgsConstructor
-public class SubstationInfo {
+public class SubwayInfoVo {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    @Column(name = "id")
@@ -27,7 +27,7 @@ public class SubstationInfo {
    @Column(name = "WORK_DT")
    private String WORK_DT;
 
-   public SubstationInfo(String id, String USE_DT, String LINE_NUM, 
+   public SubwayInfoVo(String id, String USE_DT, String LINE_NUM, 
    String SUB_STA_NM, double RIDE_PASGR_NUM, double ALIGHT_PASGR_NUM, 
    String WORK_DT) {
        this.id = id;

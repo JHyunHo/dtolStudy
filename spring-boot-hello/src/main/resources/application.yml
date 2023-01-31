@@ -19,11 +19,11 @@ spring:
       matching-strategy: ant-path-matcher
       
 ---
-spring:
-  batch:
-    initialize-schema:  always
+#spring:
+#  batch:
+#   initialize-schema:  always
     
 ---
-spring:
-  resources:
-    location: C:\Users\hhjeo\DtolStudy\spring-boot-hello\storage\
+#spring:
+#  resources:
+#    location: C:\Users\hhjeo\DtolStudy\spring-boot-hello\storage\init\Subway.csv
