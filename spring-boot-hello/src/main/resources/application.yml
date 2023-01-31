@@ -9,6 +9,7 @@ spring:
     url: jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=true&serverTimezone=UTC
     username: root
     password: dtol0330
+    
 
 ---
 #swagger 설정(3이상 버전시 설정)
@@ -18,9 +19,9 @@ spring:
       matching-strategy: ant-path-matcher
       
 ---
-#spring:
-#  batch:
-#    initialize-schema:  always
+spring:
+  batch:
+    initialize-schema:  always
     
 ---
 spring:
