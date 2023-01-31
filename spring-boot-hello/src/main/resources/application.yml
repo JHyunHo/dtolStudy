@@ -4,13 +4,12 @@ server:
 
 # DB 설정
 spring:
-  datasource:
+  datasource :
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/mydb
+    url: jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=true&serverTimezone=UTC
     username: root
     password: dtol0330
-    
-    
+
 ---
 #swagger 설정(3이상 버전시 설정)
 spring:
@@ -19,6 +18,11 @@ spring:
       matching-strategy: ant-path-matcher
       
 ---
+#spring:
+#  batch:
+#    initialize-schema:  always
+    
+---
 spring:
-  batch:
-    initialize-schema:  always
+  resources:
+    location: C:\Users\hhjeo\DtolStudy\spring-boot-hello\storage\

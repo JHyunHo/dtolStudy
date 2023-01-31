@@ -3,10 +3,12 @@ package com.sample.springboothelloSubstationInfo;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "Substationinfo")
+@NoArgsConstructor
 public class SubstationInfo {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
