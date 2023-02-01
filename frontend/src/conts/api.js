@@ -7,18 +7,12 @@ export function POST_API(file) {
     console.log(`업로드 파일 : ${file}`)
     axios({
         method: 'post',
-<<<<<<< HEAD
-        url: `${HOST_URL}/save`,
-        params: {
-            file
-=======
         headers : {
             "Content-Type": "multipart/form-data",
         },
         url: `${HOST_URL}/api/save`,
         data: {
             formData
->>>>>>> 8b6c92e9e60e1c504330ae3b7a62564e2bb8c948
         }
       });
 }
