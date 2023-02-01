@@ -10,7 +10,7 @@ export function POST_API(file) {
         headers : {
             "Content-Type": "multipart/form-data",
         },
-        url: `${HOST_URL}/api/save`,
+        url: `${HOST_URL}/save`,
         data: {
             formData
         }
