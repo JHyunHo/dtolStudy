@@ -6,7 +6,7 @@ export function POST_API(file) {
     axios({
         method: 'post',
         url: `${HOST_URL}/save`,
-        data: {
+        params: {
             file
         }
       });

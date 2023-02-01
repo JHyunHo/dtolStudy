@@ -1,5 +1,8 @@
 package com.sample.springboothelloSubway.vo;
 
+
+
+
 import javax.persistence.*;
 
 import lombok.Data;
@@ -37,5 +40,11 @@ public class SubwayInfoVo {
        this.RIDE_PASGR_NUM = RIDE_PASGR_NUM;
        this.ALIGHT_PASGR_NUM = ALIGHT_PASGR_NUM;
        this.WORK_DT = WORK_DT;
+   }
+   @Override
+   public String toString() {
+	   
+	return "OK";
+	   
    }
 }
