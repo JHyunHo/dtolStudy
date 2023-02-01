@@ -1,20 +1,13 @@
 import axios from "axios";
 
 const HOST_URL = 'http://localhost:8082'
-export function POST_API(file) {
+export async function POST_API(file) {
     let formData = new FormData(); 
     formData.append("file", file)
-    console.log(`업로드 파일 : ${file}`)
-    axios({
-        method: 'post',
-        headers : {
-            "Content-Type": "multipart/form-data",
-        },
-        url: `${HOST_URL}/save`,
-        data: {
-            formData
-        }
-      });
+    console.log(file)
+    await axios.post(`${HOST_URL}/save`, formData, {
+        headers : {'Content-Type' : 'multipart/formData'}
+    })
 }
 
 
