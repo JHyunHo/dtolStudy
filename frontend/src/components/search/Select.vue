@@ -3,6 +3,7 @@
         :items="items"
         :label="label"
         @input="changeInput"
+        :multiple="multiple"
         />
 </template>
 
@@ -11,11 +12,9 @@
     name : 'SelectVue',
     props : {
       propLabel : String,
-      propItem : Array
+      propItem : Array,
+      propMultiple : Boolean
     }, 
-    mounted:{
-     
-    },
     methods : {
       changeInput(val) {
         this.$emit('onSearch', val, this.label)
@@ -27,6 +26,9 @@
       },
       items() {
         return this.$props.propItem
+      },
+      multiple() {
+        return this.$props.propMultiple
       }
     }
   }
