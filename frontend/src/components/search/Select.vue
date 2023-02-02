@@ -2,6 +2,7 @@
       <v-select
         :items="items"
         :label="label"
+        @input="changeInput"
         />
 </template>
 
@@ -9,17 +10,23 @@
   export default {
     name : 'SelectVue',
     props : {
-      propLabel : String
+      propLabel : String,
+      propItem : Array
     }, 
-    data: () => ({
-      items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
-    }),
     mounted:{
-      
+     
+    },
+    methods : {
+      changeInput(val) {
+        this.$emit('onSearch', val, this.label)
+      }
     },
     computed : {
       label() {
         return this.$props.propLabel
+      },
+      items() {
+        return this.$props.propItem
       }
     }
   }
