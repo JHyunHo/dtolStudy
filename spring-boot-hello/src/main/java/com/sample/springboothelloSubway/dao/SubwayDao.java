@@ -51,5 +51,7 @@ public class SubwayDao {
         		subway.getLINE_NUM(), subway.getSUB_STA_NM(),
         		subway.getRIDE_PASGR_NUM(), subway.getALIGHT_PASGR_NUM(), subway.getWORK_DT());
     }
+    
+    
 
 }

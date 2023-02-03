@@ -8,7 +8,7 @@ import com.sample.springboothelloSubway.domain.Subway;
 @Configuration
 public class ParserFactory {
     @Bean
-    public ReadLineContext<Subway> hospitalReadLineContextest(){
+    public ReadLineContext<Subway> subwayReadLineContextest(){
         return new ReadLineContext<Subway>(new SubwayParser());
     }
 }
