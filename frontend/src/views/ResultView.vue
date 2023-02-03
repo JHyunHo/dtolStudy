@@ -18,7 +18,7 @@
         <v-row>
           <v-col><GridVue :propColumnDefs="gridColDefs" :propRowData="gridRowData"/></v-col>
           <v-divider vertical/>
-          <v-col><PieChartVue/></v-col>
+          <v-col><BarChartVue :propChartData="gridRowData"/></v-col>
         </v-row>
       </v-col>
     </v-row>
@@ -29,7 +29,7 @@ import ButtonVue from '@/components/button/Button.vue';
 import DatePicker from '@/components/search/DatePicker'
 import SelectVue from '@/components/search/Select'
 import GridVue from '@/components/grid/Grid.vue';
-import PieChartVue from '@/components/chart/BarChart.vue';
+import BarChartVue from '@/components/chart/BarChart.vue';
 import {GET_API} from '@/conts/api'
 import _ from 'lodash'
 
@@ -40,7 +40,7 @@ export default {
     SelectVue,
     ButtonVue,
     GridVue,
-    PieChartVue
+    BarChartVue
   }, 
   data: () => ({
       searchData : {},
@@ -55,9 +55,9 @@ export default {
           { headerName:'역명', field: 'sub_sta_nm', sortable: true, filter: true },
           { headerName:'승차객 수', field: 'ride_pasgr_num', sortable: true, filter: true},
           { headerName:'하차객 수', field: 'alight_pasgr_num', sortable: true, filter: true },
-          { headerName:'이용 일자', field: 'use_dt', sortable: true, filter: true, /* checkboxSelection: true */ },
+          // { headerName:'이용 일자', field: 'use_dt', sortable: true, filter: true, /* checkboxSelection: true */ },
       ],
-      gridRowData : null
+      gridRowData : null,
   }),
   /* 옵션 api 초기화 */
   created() {
