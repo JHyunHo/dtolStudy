@@ -34,7 +34,7 @@
             <v-btn
               text
               color="primary"
-              @click="$refs.menu.save(date)"
+              @click="onClickOk"
             >
               OK
             </v-btn>
@@ -53,6 +53,12 @@
     }),
     mounted:{
         
+    },
+    methods : {
+      onClickOk() {
+        this.$refs.menu.save(this.date)
+        this.$emit("onOk", this.date)
+      }
     }
   }
 </script>
