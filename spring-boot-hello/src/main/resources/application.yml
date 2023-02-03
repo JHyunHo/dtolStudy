@@ -1,7 +1,6 @@
 # 서버포트설정
-server:
-  port: 8082
-
+server.port: 8082
+---
 # DB 설정
 spring:
   datasource :
@@ -9,7 +8,6 @@ spring:
     url: jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=true&serverTimezone=UTC
     username: root
     password: dtol0330
-    
 
 ---
 #swagger 설정(3이상 버전시 설정)
@@ -24,6 +22,14 @@ spring:
 #   initialize-schema:  always
     
 ---
-#spring:
-#  resources:
-#    location: C:\Users\hhjeo\DtolStudy\spring-boot-hello\storage\init\Subway.csv
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+        
+---
+spring:
+  servlet:
+    multipart:
+      max-request-size: 50MB
+        
