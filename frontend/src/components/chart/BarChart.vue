@@ -13,14 +13,11 @@ export default {
     name: 'BarChartVue',
     props : {
         propChartData : Array
-    }, 
-    // data: () => ({
-    //   chart : null
-    // }),
+    },
+    data: () => ({
+      chartData : null
+    }),
     mounted() {
-        console.log('!!!')
-        console.log(this.propChartData)
-        console.log(this.$props.propChartData)
         let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
             
         chart.legend = new am4charts.Legend()
@@ -55,19 +52,23 @@ export default {
         createSeries('ride_pasgr_num', '승차객 수');
         createSeries('alight_pasgr_num', '하차객 수');
 
-        chart.data = this.$props.propChartData
+        chart.data = this.chartData
         
     },
-    // updated() {
-    //     let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
-    //     chart.data = this.$props.propChartData
-    // },
-    // computed : {
-    //     chartData() {
-    //         console.log(this.propChartData)
-    //         console.log(this.$props.propChartData)
-    //     }
-    // }
+    updated() {
+        console.log('!!!')
+        // let chart = am4core.create(this.$refs.chartdiv, am4charts.XYChart);
+        // chart.data = this.$props.propChartData
+    },
+    /* 
+        computed VS watch
+    */
+    watch : {
+        propChartData() {
+            this.chartData = this.propChartData
+            console.log(this.chartData)
+        }
+    }
     // beforeDestroy() {
     //     if (this.chart) {
     //         this.chart.dispose();
