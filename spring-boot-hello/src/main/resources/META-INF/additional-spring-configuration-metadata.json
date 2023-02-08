@@ -1,8 +1,5 @@
-{"properties": [
-  {
-    "name": "spring.resources.location",
-    "type": "java.lang.String",
-    "description": "A description for 'spring.resources.location'"
-  }
-  ]
-}
+{"properties": [{
+  "name": "spring.mysql.console.enabled",
+  "type": "java.lang.String",
+  "description": "A description for 'spring.mysql.console.enabled'"
+}]}

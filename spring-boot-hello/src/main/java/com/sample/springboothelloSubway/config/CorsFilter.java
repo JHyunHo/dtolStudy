@@ -1,4 +1,4 @@
-package com.sample.springboothelloSubway.filter;
+package com.sample.springboothelloSubway.config;
 
 import java.io.IOException;
 

@@ -8,6 +8,9 @@ spring:
     url: jdbc:mysql://localhost:3306/mydb?useSSL=false&useUnicode=true&serverTimezone=UTC
     username: root
     password: dtol0330
+  jpa:
+    hibernate:
+      ddl-auto: create
 
 ---
 #swagger 설정(3이상 버전시 설정)
@@ -17,19 +20,40 @@ spring:
       matching-strategy: ant-path-matcher
       
 ---
+## batch 적용
 #spring:
 #  batch:
 #   initialize-schema:  always
     
 ---
+## 파일 사이즈 늘리기
 spring:
   servlet:
     multipart:
       max-file-size: 50MB
-        
+      max-request-size: 50MB 
 ---
 spring:
-  servlet:
-    multipart:
-      max-request-size: 50MB
+  jpa:
+    show-sql: true
+  mysql:
+    console:
+      enabled: true 
+      
+---
+spring:
+  main:
+    allow-bean-definition-overriding: true 
+    
+    
+---
+## 카멜케이스 컬럼명 적용
+spring:
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+---
+
         
