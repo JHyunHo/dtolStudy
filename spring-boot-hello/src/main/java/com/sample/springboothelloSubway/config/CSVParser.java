@@ -2,7 +2,6 @@ package com.sample.springboothelloSubway.config;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.InputStreamReader;
 
 import java.sql.*;
@@ -18,11 +17,11 @@ public class CSVParser{
 		          "INSERT IGNORE INTO substationinfo (USE_DT, LINE_NUM, SUB_STA_NM, RIDE_PASGR_NUM, ALIGHT_PASGR_NUM, WORK_DT) VALUES (?, ?, ?, ?, ?, ?)");
 		  	  String path = "C:\\Users\\hhjeo\\DtolStudy\\spring-boot-hello\\src\\main\\resources\\csv\\" + file;
 		      BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path), "EUC-KR"));
-//		      FileWriter writer = new FileWriter(file);
-//		      SVPrinter printer = new CSVPrinter(writer, CSVFormat.DEFAULT
-//                      .withHeader("Index", "Column1", "Column2", "Column3"));
 		      String line;
+		      line = br.readLine(); // 헤더 삭제
 		      while ((line = br.readLine()) != null) {
+		    	line = line.replaceAll("\\\"","");   // 쌍따옴표 제거
+//		    	System.out.println("data : "+line);
 		        String[] data = line.split(",");
 		        pstmt.setString(1, data[0]);
 		        pstmt.setString(2, data[1]);

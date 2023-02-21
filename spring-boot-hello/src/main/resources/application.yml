@@ -55,5 +55,19 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 ---
+## mybatis 설정
+mybatis:
+    type-aliases-package: com.sample.springboothelloSubway.dao
+    configuration:
+        map-underscore-to-camel-case: true
+    mapper-locations: classpath:mapper/*.xml
+
+
+---
+
+      
+
+
+
 
         
