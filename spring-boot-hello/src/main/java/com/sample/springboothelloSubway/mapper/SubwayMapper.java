@@ -14,7 +14,7 @@ import com.sample.springboothelloSubway.dao.SubwayDao;
 
 @Mapper
 public interface SubwayMapper {
-	@Select("SELECT LINE_NUM,SUB_STA_NM FROM substationinfo")
+	@Select("SELECT * FROM substationinfo")
 	@Results(id="SubwayMap", value={
 //		@Result(property = "USE_DT", column = "USE_DT"),
 		@Result(property = "LINE_NUM", column = "LINE_NUM"),
@@ -23,7 +23,7 @@ public interface SubwayMapper {
 //		@Result(property = "ALIGHT_PASGR_NUM", column = "ALIGHT_PASGR_NUM"),
 //		@Result(property = "WORK_DT", column = "WORK_DT")
 	})
-	List<SubwayDao> getAll();
+	List<SubwayDao> getSubway();
 }
 
 //	@Select("SELECT * FROM substationinfo WHERE LINE_NUM = #{LINE_NUM}")

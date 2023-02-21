@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.sample.springboothelloSubway.dao.ChartData;
 import com.sample.springboothelloSubway.dao.SubwayDao;
 import com.sample.springboothelloSubway.mapper.SubwayMapper;
 import com.sample.springboothelloSubway.service.SubwayService;
@@ -57,9 +58,17 @@ public class SubwayController {
 	} 
     
 	@GetMapping("/subway")   
-	public List<SubwayDao> getAll(){
-		return subwayService.getAll();
+	public List<SubwayDao> getSubway(){
+		return subwayService.getSubway();
 	}
+	
+	
+	@GetMapping("/chart")   
+	public List<ChartData> getChartData(){
+		return subwayService.getChartData();
+	}
+	
+	
 }
 
 

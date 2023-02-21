@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sample.springboothelloSubway.config.CSVParser;
+import com.sample.springboothelloSubway.dao.ChartData;
 import com.sample.springboothelloSubway.dao.SubwayDao;
+import com.sample.springboothelloSubway.mapper.ChartMapper;
 import com.sample.springboothelloSubway.mapper.SubwayMapper;
 
 
@@ -22,9 +24,15 @@ public class SubwayService {
 	@Autowired
     private SubwayMapper subwayMapper;
 
-    public List<SubwayDao> getAll() {
-        return subwayMapper.getAll();
+    public List<SubwayDao> getSubway() {
+        return subwayMapper.getSubway();
     }
 	
+    @Autowired
+    private ChartMapper chartMapper;
+
+    public List<ChartData> getChartData() {
+        return chartMapper.getChartData();
+    }
 	
 }
