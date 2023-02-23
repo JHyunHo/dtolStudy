@@ -2,6 +2,41 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="substation">
+	
+	<insert id="saveSubstation">
+		INSERT INTO Substation (
+			USE_DT, 
+			LINE_NUM, 
+			SUB_STA_NM, 
+			RIDE_PASGR_NUM,
+			ALIGHT_PASGR_NUM,
+			WORK_DT
+		) VALUES (
+			#{USE_DT}, 
+			#{LINE_NUM}, 
+			#{SUB_STA_NM}, 
+			#{RIDE_PASGR_NUM},
+			#{ALIGHT_PASGR_NUM},
+			#{WORK_DT}
+		)
+	 </insert>
+ 
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <mapper namespace="com.sample.springboothelloSubway.mapper.SubwayMapper">
   <resultMap id="subwayResult" type="SubwayDao">
 	  <id column="LINE_NUM" property="LINE_NUM" jdbcType="VARCHAR"/>
@@ -15,3 +50,4 @@
 	  
   </select>
 </mapper>
+ -->

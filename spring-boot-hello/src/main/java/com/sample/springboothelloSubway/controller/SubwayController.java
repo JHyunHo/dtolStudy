@@ -62,12 +62,10 @@ public class SubwayController {
 		return subwayService.getSubway();
 	}
 	
-	
 	@GetMapping("/chart")   
 	public List<ChartData> getChartData(){
 		return subwayService.getChartData();
-	}
-	
+	} 
 	
 }
 
